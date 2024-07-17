@@ -1,27 +1,18 @@
 #include <stdio.h>
+#include<string.h>
 int add(int a, int b){
-    int add;
-    add = a + b;
     return a+b;
 }
 int sub(int a, int b){
-    int sub;
-    sub = a-b;
     return a-b;
 }
 int mult(int a, int b){
-    int mult;
-    mult = a*b;
     return a*b;
 }
 int div(int a, int b){
-    int sub;
-    sub = a/b;
     return a/b;
 }
 int rem(int a, int b){
-    int rem;
-    rem = a%b;
     return a%b;
 }
 
@@ -29,8 +20,7 @@ int main(){
     int a;
     int b;
     char opp[20];
-    fgets(opp, 20, stdin);
-    printf("This is a calculator \n5");
+    printf("This is a calculator \n");
 
     printf("Enter your first number:");
     scanf("%d", &a);
@@ -39,32 +29,31 @@ int main(){
     scanf("%d", &b);
 
     printf("Enter operation(add, sub, mult, div, remainder):");
-    fgets(opp, 20, stdin);
+    scanf("%s", &opp);
 
-    if ((opp=="add")|(opp=="+"))
+
+    if ((strcmp(opp, "add") == 0)||(strcmp(opp, "+") == 0)||(strcmp(opp, "adiition") == 0))
     {
-        printf("%s", add(a,b));
+        printf("%d", add(a,b));
     }
-    else if ((opp=="sub")|(opp=="-"))
+    else if ((strcmp(opp, "sub") == 0)||(strcmp(opp, "-") == 0)||(strcmp(opp, "subtract") == 0))
     {
-        printf("%s", sub(a,b));
+        printf("%d", sub(a,b));
     }
-    else if ((opp=="mult")|(opp=="*")|(opp=="x")|(opp=="X"))
+    else if ((strcmp(opp, "mult") == 0)||(strcmp(opp, "*") == 0)||(strcmp(opp, "x") == 0))
     {
-        printf("%s", mult(a,b));
+        printf("%d", mult(a,b));
     }
-    else if ((opp=="div")|(opp=="/"))
+    else if ((strcmp(opp, "div") == 0)||(strcmp(opp, "divide") == 0)||(strcmp(opp, "/") == 0))
     {
-        printf("%s", div(a,b));
+        printf("%d", div(a,b));
     }
-    else if ((opp=="rem")|(opp=="remainder")|(opp=="%%"))
+    else if ((strcmp(opp, "rem") == 0)||(strcmp(opp, "remainder") == 0)||(strcmp(opp, "%%") == 0))
     {
-        printf("%s", rem(a,b));
+        printf("%d", rem(a,b));
     }
     else{
         printf("Wrong opperator!");
-    }
-    
-        
-    
+    }   
+    return 0;
 }
