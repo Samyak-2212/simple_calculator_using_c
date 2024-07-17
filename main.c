@@ -20,6 +20,7 @@ int main(){
     int a;
     int b;
     char opp[20];
+    
     printf("This is a calculator \n");
 
     printf("Enter your first number:");
@@ -48,7 +49,7 @@ int main(){
     {
         printf("%d", div(a,b));
     }
-    else if ((strcmp(opp, "rem") == 0)||(strcmp(opp, "remainder") == 0)||(strcmp(opp, "%%") == 0))
+    else if ((strcmp(opp, "rem") == 0)||(strcmp(opp, "remainder") == 0)||(strcmp(opp, "%") == 0))
     {
         printf("%d", rem(a,b));
     }
