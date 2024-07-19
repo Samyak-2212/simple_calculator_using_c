@@ -19,7 +19,7 @@ int rem(int a, int b){
 int main(){
     int a;
     int b;
-    char opp[20];
+    char opp;
     
     printf("This is a calculator \n");
 
@@ -28,33 +28,43 @@ int main(){
 
     printf("Enter your second number:");
     scanf("%d", &b);
+    fflush(stdin);
 
-    printf("Enter operation(add, sub, mult, div, remainder):");
-    scanf("%s", &opp);
+    printf("Enter operation(+, -, *, /, r(remainder):");
+    scanf("%c", &opp);
 
 
-    if ((strcmp(opp, "add") == 0)||(strcmp(opp, "+") == 0)||(strcmp(opp, "adiition") == 0))
-    {
-        printf("%d", add(a,b));
-    }
-    else if ((strcmp(opp, "sub") == 0)||(strcmp(opp, "-") == 0)||(strcmp(opp, "subtract") == 0))
-    {
-        printf("%d", sub(a,b));
-    }
-    else if ((strcmp(opp, "mult") == 0)||(strcmp(opp, "*") == 0)||(strcmp(opp, "x") == 0))
-    {
-        printf("%d", mult(a,b));
-    }
-    else if ((strcmp(opp, "div") == 0)||(strcmp(opp, "divide") == 0)||(strcmp(opp, "/") == 0))
-    {
-        printf("%d", div(a,b));
-    }
-    else if ((strcmp(opp, "rem") == 0)||(strcmp(opp, "remainder") == 0)||(strcmp(opp, "%") == 0))
-    {
-        printf("%d", rem(a,b));
-    }
-    else{
-        printf("Wrong opperator!");
-    }   
-    return 0;
+
+   switch (opp){
+    
+   case '+' :
+    printf("%d", add(a, b));
+    break;
+
+   case '-':
+    printf("%d", sub(a, b));
+    break;
+
+   case '*':
+    printf("%d", mult(a, b));
+    break;
+
+   case '/':
+    printf("%d", div(a, b));
+    break;
+   
+   case 'r':
+   if (a>b){
+    printf("%d", rem(a, b));
+   }
+   else {printf("ERROR: Dividend is smaller than divisor!!!");}
+    break;
+
+   default:
+    printf("Invalid Operator!!!");
+    break;
+ 
+return 0;
+}
+
 }
