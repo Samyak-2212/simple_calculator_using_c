@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include<string.h>
-#include<windows.h>
+#include<unistd.h>
 int add(int a, int b){
     return a+b;
 }
@@ -42,7 +42,7 @@ int main(){
     {
         printf("%d", sub(a,b));
     }
-    else if ((strcmp(opp, "mult") == 0)||(strcmp(opp, "*") == 0)||(strcmp(opp, "x") == 0))||(strcmp(opp, "mul") == 0))
+    else if ((strcmp(opp, "mult") == 0)||(strcmp(opp, "*") == 0)||(strcmp(opp, "x") == 0)||(strcmp(opp, "mul") == 0))
     {
         printf("%d", mult(a,b));
     }
@@ -57,6 +57,6 @@ int main(){
     else{
         printf("Wrong opperator!");
     }   
-    Sleep(5000);
+    sleep(5);
     return 0;
 }
