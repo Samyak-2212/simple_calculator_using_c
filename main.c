@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include<string.h>
+#include<windows.h>
 int add(int a, int b){
     return a+b;
 }
@@ -9,7 +10,7 @@ int sub(int a, int b){
 int mult(int a, int b){
     return a*b;
 }
-int div(int a, int b){
+int divs(int a, int b){
     return a/b;
 }
 int rem(int a, int b){
@@ -41,13 +42,13 @@ int main(){
     {
         printf("%d", sub(a,b));
     }
-    else if ((strcmp(opp, "mult") == 0)||(strcmp(opp, "*") == 0)||(strcmp(opp, "x") == 0))
+    else if ((strcmp(opp, "mult") == 0)||(strcmp(opp, "*") == 0)||(strcmp(opp, "x") == 0))||(strcmp(opp, "mul") == 0))
     {
         printf("%d", mult(a,b));
     }
     else if ((strcmp(opp, "div") == 0)||(strcmp(opp, "divide") == 0)||(strcmp(opp, "/") == 0))
     {
-        printf("%d", div(a,b));
+        printf("%d", divs(a,b));
     }
     else if ((strcmp(opp, "rem") == 0)||(strcmp(opp, "remainder") == 0)||(strcmp(opp, "%") == 0))
     {
@@ -56,5 +57,6 @@ int main(){
     else{
         printf("Wrong opperator!");
     }   
+    Sleep(5000);
     return 0;
 }
