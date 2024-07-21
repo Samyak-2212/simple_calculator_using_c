@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include<string.h>
+#include<windows.h>
 int add(int a, int b){
     return a+b;
 }
@@ -9,7 +10,7 @@ int sub(int a, int b){
 int mult(int a, int b){
     return a*b;
 }
-int div(int a, int b){
+int divs(int a, int b){
     return a/b;
 }
 int rem(int a, int b){
@@ -50,7 +51,7 @@ int main(){
     break;
 
    case '/':
-    printf("%d", div(a, b));
+    printf("%d", divs(a, b));
     break;
    
    case 'r':
@@ -63,8 +64,8 @@ int main(){
    default:
     printf("Invalid Operator!!!");
     break;
- 
-return 0;
 }
+    Sleep(5000);
+return 0;
 
 }
